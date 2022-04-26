@@ -13,8 +13,11 @@
         android:theme="@style/Theme.VeryableCodingChallenge">
         <activity
             android:name=".view.PayoutsDetailActivity"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
-        <activity android:name=".view.PayoutsListActivity">
+        <activity
+            android:name=".view.PayoutsListActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

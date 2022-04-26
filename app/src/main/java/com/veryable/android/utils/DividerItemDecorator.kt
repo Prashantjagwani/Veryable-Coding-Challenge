@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 
-
+// custom divider for the list excluding the top and bottom divider
 class DividerItemDecorator(private val mDivider: Drawable) :
     ItemDecoration() {
 

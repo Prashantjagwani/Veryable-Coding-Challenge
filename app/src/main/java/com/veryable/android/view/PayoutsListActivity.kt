@@ -20,6 +20,7 @@ import com.veryable.android.utils.Constants.ITEM_DATA
 import com.veryable.android.utils.DividerItemDecorator
 import com.veryable.android.viewmodel.PayoutsListActivityViewModel
 
+// list screen with api data shown in recyclerview
 class PayoutsListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPayoutsListBinding
@@ -34,8 +35,11 @@ class PayoutsListActivity : AppCompatActivity() {
         initViewModel()
     }
 
+    // initialize the views and custom toolbar
     private fun initView() {
         setSupportActionBar(binding.toolbar)
+
+        // initialize bank recyclerview and attach the adapter
         binding.bankRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@PayoutsListActivity)
             bankAdapter = ItemListAdapter()
@@ -51,6 +55,7 @@ class PayoutsListActivity : AppCompatActivity() {
             itemDecoration?.let { addItemDecoration(it) }
         }
 
+        // initialize card recyclerview and attach the adapter
         binding.cardRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@PayoutsListActivity)
             cardAdapter = ItemListAdapter()
@@ -67,6 +72,7 @@ class PayoutsListActivity : AppCompatActivity() {
         }
     }
 
+    // initialize viewmodel for the list screen to observe the api data and notify to the adapter
     @SuppressLint("NotifyDataSetChanged")
     private fun initViewModel() {
         val viewModel =
@@ -83,18 +89,24 @@ class PayoutsListActivity : AppCompatActivity() {
                     .show()
             }
         }
+
+        // set on click listener on the item click for card list
         cardAdapter.setItemClickListener(object : ItemClickListener {
             override fun onItemClick(apiResponseItem: ApiResponseItem?, position: Int) {
                 viewModel.onItemClick(apiResponseItem, position)
             }
 
         })
+
+        // set on click listener on the item click for bank list
         bankAdapter.setItemClickListener(object : ItemClickListener {
             override fun onItemClick(apiResponseItem: ApiResponseItem?, position: Int) {
                 viewModel.onItemClick(apiResponseItem, position)
             }
 
         })
+
+        // observe the item data on click
         viewModel.getLiveItemObserver().observe(this@PayoutsListActivity) {
             Intent(this@PayoutsListActivity, PayoutsDetailActivity::class.java).apply {
                 putExtra(ITEM_DATA, it)

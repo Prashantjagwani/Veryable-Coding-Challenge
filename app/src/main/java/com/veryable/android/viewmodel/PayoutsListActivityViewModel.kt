@@ -8,19 +8,26 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+// viewmodel for the list screen
 class PayoutsListActivityViewModel : ViewModel() {
 
+    // livedata for the list fetched from the api
     var liveDataList: MutableLiveData<MutableList<ApiResponseItem>> = MutableLiveData()
+
+    // livedata for the item data on click
     var itemData: MutableLiveData<ApiResponseItem> = MutableLiveData()
 
+    // observer for the list live data
     fun getLiveDataObserver(): MutableLiveData<MutableList<ApiResponseItem>> {
         return liveDataList
     }
 
+    // observer for the item live data
     fun getLiveItemObserver(): MutableLiveData<ApiResponseItem> {
         return itemData
     }
 
+    // api call to fetch list data
     fun getApiList() {
         val call = RetroInstance.apiService.getUsers()
         call.enqueue(object : Callback<MutableList<ApiResponseItem>> {
@@ -38,6 +45,7 @@ class PayoutsListActivityViewModel : ViewModel() {
         })
     }
 
+    // setter method for the item data on click
     fun onItemClick(apiResponseItem: ApiResponseItem?, position: Int) {
         itemData.value = apiResponseItem
     }

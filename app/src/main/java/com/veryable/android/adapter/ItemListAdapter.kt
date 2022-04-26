@@ -10,9 +10,13 @@ import com.veryable.android.listener.ItemClickListener
 import com.veryable.android.utils.Constants.BANK_TYPE
 import com.veryable.android.utils.Constants.CARD_TYPE
 
+// Adapter to populate payout list screen recyclerview
 class ItemListAdapter : RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
+    // mutable list to store data
     private var list: List<ApiResponseItem>? = null
+
+    // click listener for interaction with the list
     private var itemClickListener: ItemClickListener? = null
 
     fun setList(list: List<ApiResponseItem>?) {
@@ -23,6 +27,7 @@ class ItemListAdapter : RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
         this.itemClickListener = itemClickListener
     }
 
+    // inflate the layout to the viewholder
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -33,6 +38,7 @@ class ItemListAdapter : RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
         return ItemViewHolder(binding)
     }
 
+    // bind data to the viewholder
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(list?.get(position))
         holder.itemView.setOnClickListener {
@@ -47,6 +53,7 @@ class ItemListAdapter : RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
         return list?.size ?: 0
     }
 
+    // viewholder component for the adapter with binding logic
     class ItemViewHolder(private val binding: SingleListItemBinding) : RecyclerView.ViewHolder
         (binding.root) {
 

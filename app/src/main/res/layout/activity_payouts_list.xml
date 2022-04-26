@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
@@ -39,7 +40,10 @@
                     android:layout_height="wrap_content"
                     android:background="@color/grey"
                     android:fontFamily="@font/roboto_bold"
-                    android:padding="@dimen/dimen_14"
+                    android:paddingStart="@dimen/dimen_14"
+                    android:paddingTop="@dimen/dimen_10"
+                    android:paddingEnd="@dimen/dimen_14"
+                    android:paddingBottom="@dimen/dimen_10"
                     android:text="@string/bank_accounts"
                     android:textColor="@color/dark_grey_1"
                     android:textSize="@dimen/text_14" />
@@ -66,7 +70,10 @@
                     android:layout_height="wrap_content"
                     android:background="@color/grey"
                     android:fontFamily="@font/roboto_bold"
-                    android:padding="@dimen/dimen_14"
+                    android:paddingStart="@dimen/dimen_14"
+                    android:paddingTop="@dimen/dimen_10"
+                    android:paddingEnd="@dimen/dimen_14"
+                    android:paddingBottom="@dimen/dimen_10"
                     android:text="@string/cards"
                     android:textColor="@color/dark_grey_1"
                     android:textSize="@dimen/text_14" />

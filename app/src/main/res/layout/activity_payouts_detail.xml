@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/grey"
         android:orientation="vertical"
         tools:context=".view.PayoutsDetailActivity">
 
@@ -39,7 +39,7 @@
             android:id="@+id/nameTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginTop="@dimen/dimen_4"
             android:layout_marginBottom="@dimen/dimen_2"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center_horizontal"
@@ -51,8 +51,6 @@
             android:id="@+id/descTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_3"
-            android:layout_marginBottom="@dimen/dimen_3"
             android:fontFamily="@font/roboto_regular"
             android:gravity="center_horizontal"
             android:text="@string/bank_accounts"
@@ -67,8 +65,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_14"
-            android:background="@color/blue"
+            android:layout_marginStart="@dimen/dimen_26"
+            android:layout_marginTop="@dimen/dimen_18"
+            android:layout_marginEnd="@dimen/dimen_26"
+            android:layout_marginBottom="@dimen/dimen_18"
+            android:background="@drawable/button_background"
             android:fontFamily="@font/roboto_bold"
             android:text="Done"
             android:textColor="@color/white" />

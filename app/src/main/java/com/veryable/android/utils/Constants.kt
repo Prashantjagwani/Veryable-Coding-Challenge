@@ -1,5 +1,6 @@
 package com.veryable.android.utils
 
+// app constants are defined here
 object Constants {
 
     val CARD_TYPE = "card"

@@ -12,6 +12,7 @@ import com.veryable.android.utils.Constants.CARD_TYPE
 import com.veryable.android.utils.Constants.ITEM_DATA
 import com.veryable.android.viewmodel.PayoutsDetailActivityViewModel
 
+// detail screen for the list
 class PayoutsDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPayoutsDetailBinding
@@ -26,6 +27,7 @@ class PayoutsDetailActivity : AppCompatActivity() {
         getIntentData()
     }
 
+    // initialize the views and custom toolbar
     private fun initView() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -33,15 +35,18 @@ class PayoutsDetailActivity : AppCompatActivity() {
 
     }
 
+    // finish activity on back arrow clicked
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        finish()
         return super.onSupportNavigateUp()
     }
 
+    // fetch data from the intent
     fun getIntentData() {
         apiResponseItem = intent.getParcelableExtra(ITEM_DATA)
     }
 
+    // initialize viewmodel and attach observer to the item data
     fun initViewModel() {
         val viewModel =
             ViewModelProvider(this@PayoutsDetailActivity).get(PayoutsDetailActivityViewModel::class.java)
@@ -57,6 +62,6 @@ class PayoutsDetailActivity : AppCompatActivity() {
             binding.nameTxt.text = apiResponseItem?.accountName ?: ""
             binding.descTxt.text = apiResponseItem?.desc ?: ""
         }
-        viewModel.liveDataList.value = apiResponseItem
+        viewModel.setItemData(apiResponseItem)
     }
 }
