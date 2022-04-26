@@ -1,8 +1,9 @@
-package com.veryable.android
+package com.veryable.android.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.veryable.android.R
 import com.veryable.android.databinding.ActivityPayoutsListBinding
 
 class PayoutsListActivity : AppCompatActivity() {

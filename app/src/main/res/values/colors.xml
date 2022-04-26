@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue">#2081C3</color>
+    <color name="blue">#3D80BE</color>
     <color name="dark_blue">#0B6CAE</color>
     <color name="white">#FFFFFF</color>
+    <color name="grey">#F2F5F6</color>
+    <color name="dark_grey">#4C4C4C</color>
+    <color name="dark_grey_1">#4A4A4A</color>
+    <color name="light_grey">#DEE1E2</color>
+    <color name="light_grey_1">#7E7E7E</color>
+    <color name="light_grey_2">#C4C6C7</color>
 </resources>
