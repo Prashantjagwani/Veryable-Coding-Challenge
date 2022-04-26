@@ -89,6 +89,12 @@ class PayoutsListActivity : AppCompatActivity() {
             }
 
         })
+        bankAdapter.setItemClickListener(object : ItemClickListener {
+            override fun onItemClick(apiResponseItem: ApiResponseItem?, position: Int) {
+                viewModel.onItemClick(apiResponseItem, position)
+            }
+
+        })
         viewModel.getLiveItemObserver().observe(this@PayoutsListActivity) {
             Intent(this@PayoutsListActivity, PayoutsDetailActivity::class.java).apply {
                 putExtra(ITEM_DATA, it)

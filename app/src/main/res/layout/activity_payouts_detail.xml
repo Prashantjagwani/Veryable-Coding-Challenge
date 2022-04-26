@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
         tools:context=".view.PayoutsDetailActivity">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/MyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:navigationIcon="@drawable/back_arrow_icon_black"
+            app:navigationIconTint="@color/dark_grey_1"
+            app:title="@string/detail"
+            app:titleCentered="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_2"
+            android:background="@color/light_grey" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/dimen_14"
+            android:src="@drawable/bank_icon_black_big"
+            app:tint="@color/blue" />
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:layout_marginBottom="@dimen/dimen_2"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center_horizontal"
+            android:text="@string/bank_accounts"
+            android:textColor="@color/dark_grey_1"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:id="@+id/descTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:layout_marginBottom="@dimen/dimen_3"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_horizontal"
+            android:text="@string/bank_accounts"
+            android:textColor="@color/dark_grey_1"
+            android:textSize="@dimen/text_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_14"
+            android:background="@color/blue"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Done"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
 </layout>
