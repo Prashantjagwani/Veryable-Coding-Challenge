@@ -11,9 +11,14 @@ import retrofit2.Response
 class PayoutsListActivityViewModel : ViewModel() {
 
     var liveDataList: MutableLiveData<MutableList<ApiResponseItem>> = MutableLiveData()
+    var itemData: MutableLiveData<ApiResponseItem> = MutableLiveData()
 
     fun getLiveDataObserver(): MutableLiveData<MutableList<ApiResponseItem>> {
         return liveDataList
+    }
+
+    fun getLiveItemObserver(): MutableLiveData<ApiResponseItem> {
+        return itemData
     }
 
     fun getApiList() {
@@ -31,6 +36,10 @@ class PayoutsListActivityViewModel : ViewModel() {
             }
 
         })
+    }
+
+    fun onItemClick(apiResponseItem: ApiResponseItem?, position: Int) {
+        itemData.value = apiResponseItem
     }
 
 }

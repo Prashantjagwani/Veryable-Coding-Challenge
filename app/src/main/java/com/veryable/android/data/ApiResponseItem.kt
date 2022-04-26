@@ -1,8 +1,11 @@
 package com.veryable.android.data
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class ApiResponseItem(
     @SerializedName("id")
     var id: Int? = null,
@@ -12,4 +15,4 @@ data class ApiResponseItem(
     var accountName: String? = null,
     @SerializedName("desc")
     var desc: String? = null
-)
+) : Parcelable
